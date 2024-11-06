@@ -1,14 +1,17 @@
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import {NewsViewScreen} from './news-view-screen.tsx';
-import {NewsListScreen} from './news-list-screen.tsx';
+import {ProgramsListScreen} from './programs-list-screen.tsx';
+import {ProgramsViewScreen} from './programs-view-screen.tsx';
 
 const Stack = createNativeStackNavigator();
 
-export const NewsStack = () => {
+export const ProgramsStack = () => {
   return (
-    <Stack.Navigator>
-      <Stack.Screen name={'List'} component={NewsListScreen} />
-      <Stack.Screen name={'View'} component={NewsViewScreen} />
+    <Stack.Navigator
+      screenOptions={{
+        headerShown: false,
+      }}>
+      <Stack.Screen name={'List'} component={ProgramsListScreen} />
+      <Stack.Screen name={'View'} component={ProgramsViewScreen} />
     </Stack.Navigator>
   );
 };

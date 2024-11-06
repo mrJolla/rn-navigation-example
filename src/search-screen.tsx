@@ -1,17 +1,28 @@
 import {Button, Text, View} from 'react-native';
 import {useNavigation} from '@react-navigation/native';
 
-export type TSearch = {}
-
-export const SearchScreen = (props: TSearch) => {
+export const SearchScreen = () => {
   const navigation = useNavigation();
 
-  return <View style={{
-    alignItems: 'center',
-    justifyContent: 'center',
-    flex:1,
-  }}>
-    <Text>Search</Text>
-    <Button title={'News'} onPress={() => navigation.navigate('')} />
-  </View>;
+  return (
+    <View
+      style={{
+        alignItems: 'center',
+        justifyContent: 'center',
+        flex: 1,
+      }}>
+      <Text>Search</Text>
+      <Button
+        title={'NewsViewScreen'}
+        onPress={() =>
+          navigation.navigate('NewsStack', {
+            screen: 'View',
+            params: {
+              id: 1,
+            },
+          })
+        }
+      />
+    </View>
+  );
 };
